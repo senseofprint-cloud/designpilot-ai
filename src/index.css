@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brand-bg text-brand-navy font-sans antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: #7C3AED;
+  color: #fff;
+}
+
+/* ---------- Brand gradients (used across cards, buttons, badges) ---------- */
+.grad-primary { background-image: linear-gradient(135deg, #7C3AED 0%, #2563EB 100%); }
+.grad-cool    { background-image: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%); }
+.grad-vivid   { background-image: linear-gradient(135deg, #EC4899 0%, #7C3AED 100%); }
+.grad-warm    { background-image: linear-gradient(135deg, #F97316 0%, #EC4899 100%); }
+.grad-fresh   { background-image: linear-gradient(135deg, #06B6D4 0%, #84CC16 100%); }
+.grad-dark    { background-image: linear-gradient(135deg, #0F1226 0%, #3B3F73 100%); }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #E8E5F6; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #D8D3F2; }
+
+/* ---------- Skeleton shimmer ---------- */
+.skeleton {
+  background: linear-gradient(90deg, #EFEDFA 25%, #F7F5FF 37%, #EFEDFA 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 10px;
+}
+
+/* ---------- Checkerboard canvas backdrop (Workspace) ---------- */
+.canvas-backdrop {
+  background-image: repeating-conic-gradient(#F6F4FD 0% 25%, #FBFAFF 0% 50%);
+  background-size: 22px 22px;
+  background-position: 50%;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
